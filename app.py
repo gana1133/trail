@@ -2095,3 +2095,13 @@ if __name__ == '__main__':
     scheduler = BackgroundScheduler()
     atexit.register(lambda: scheduler.shutdown())   
     app.run(debug=True)    
+
+
+# ✅ Full app.py final Render-ready snippet to add at end of your app.py
+
+# Make sure this is at the bottom of app.py and not inside any route or function
+
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 5000))  # Render assigns dynamic port
+    app.run(host="0.0.0.0", port=port, debug=False)  # 0.0.0.0 makes Flask accessible publicly
